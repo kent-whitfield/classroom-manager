@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import ThemeSwitch from "./components/ThemeSwitch";
+import Navbar from "./components/NavBar";
+import StudentListSelector from "./components/StudentListSelector";
+
+// Contexts
+import { ThemeContext } from "./ThemeContext";
+import { StudentListsProvider } from "./StudentListsContext";
+
+// Routes
+import { Route, Routes } from "react-router-dom";
+import Schedule from "./components/routes/Schedule";
+import Lesson from "./components/routes/Lesson";
+import StudentDetail from "./components/routes/StudentDetail";
+import EditLists from "./components/routes/EditLists";
+import Error from "./components/routes/Error";
 
 function App() {
+  const [darkMode] = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={darkMode ? "todoapp-dark" : "todoapp-light"}>
+      <div className="toggle-wrapper">
+        <ThemeSwitch />
+      </div>
+      <h1>Classroom Manager</h1>
+      <Navbar />
+      <StudentListsProvider>
+        <StudentListSelector />
+        <Routes>
+          <Route path="/" element={<Schedule />} />
+          <Route path="/lesson" element={<Lesson />} />
+          <Route path="/detail" element={<StudentDetail />} />
+          <Route path="/lists" element={<EditLists />} />
+          <Route element={Error} />
+        </Routes>
+      </StudentListsProvider>
     </div>
   );
 }
