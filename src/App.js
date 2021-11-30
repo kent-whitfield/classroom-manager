@@ -9,10 +9,11 @@ import { StudentListsProvider } from "./StudentListsContext";
 
 // Routes
 import { Route, Routes } from "react-router-dom";
-import Schedule from "./components/routes/Schedule";
+import Welcome from "./components/routes/Welcome";
 import Lesson from "./components/routes/Lesson";
 import StudentDetail from "./components/routes/StudentDetail";
 import EditLists from "./components/routes/EditLists";
+import Documentation from "./components/routes/Documentation";
 import Error from "./components/routes/Error";
 
 function App() {
@@ -28,10 +29,11 @@ function App() {
       <StudentListsProvider>
         <StudentListSelector />
         <Routes>
-          <Route path="/" element={<Schedule />} />
+          <Route path="/" element={<Welcome />} />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/detail" element={<StudentDetail />} />
           <Route path="/lists" element={<EditLists />} />
+          <Route path="/documentation" element={<Documentation />} />
           <Route element={Error} />
         </Routes>
       </StudentListsProvider>

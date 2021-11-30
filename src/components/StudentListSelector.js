@@ -26,6 +26,7 @@ function StudentListSelector() {
     };
     setStudentLists([...studentLists, newStudentList]);
     setCurrentList(listName);
+    setListName("");
 
     setEditing(false);
   }
@@ -34,6 +35,18 @@ function StudentListSelector() {
   function removeList() {
     const newList = studentLists.filter((list) => list.name !== currentList);
     setStudentLists(newList);
+    if (studentLists.length === 0) {
+      setCurrentList("");
+    }
+  }
+
+  // test whether to disable Delete button
+  function disableDelete() {
+    let selectedList = studentLists.find((list) => list.name === currentList);
+    return (
+      (selectedList && selectedList.students.length > 0) ||
+      studentLists.length < 1
+    );
   }
 
   useEffect(() => {
@@ -78,7 +91,7 @@ function StudentListSelector() {
       >
         {optionList}
       </select>
-      <button disabled={studentLists.length < 1} onClick={removeList}>
+      <button disabled={disableDelete()} onClick={removeList}>
         Delete
       </button>
       <button onClick={() => setEditing(true)}>Add new</button>
