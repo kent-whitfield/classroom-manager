@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { nanoid } from "nanoid";
 import { StudentListsContext } from "../../StudentListsContext";
 import StudentListElement from "../StudentListElement";
+import StudentListSelector from "../StudentListSelector";
 
 function EditLists() {
   const { studentLists, setStudentLists, currentList } =
@@ -35,9 +36,7 @@ function EditLists() {
     const newStudent = {
       id: nanoid(),
       name: newName,
-      volunteer: 0,
-      called: 0,
-      correct: 0,
+      history: [],
     };
     const newList = {
       name: studentList.name,
@@ -88,15 +87,21 @@ function EditLists() {
 
   return (
     <div>
+      <h2>Edit Class Lists</h2>
+      <StudentListSelector />
       <form onSubmit={addStudent}>
-        <label for="newName">Add new student: </label>
+        <label htmlFor="newName">Add new student: </label>
         <input
           id="newName"
           type="text"
           onChange={handleNameChange}
           value={newName}
+          disabled={!currentList}
         />
-        <button type="submit" disabled={newName.trim().length < 1}>
+        <button
+          type="submit"
+          disabled={newName.trim().length < 1 || studentLists.length < 1}
+        >
           Add
         </button>
       </form>
