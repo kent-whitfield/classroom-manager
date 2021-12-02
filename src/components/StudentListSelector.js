@@ -74,7 +74,7 @@ function StudentListSelector() {
 
   const addListTemplate = (
     <form onSubmit={handleSubmit}>
-      <label for="listName">New list name: </label>
+      <label htmlFor="listName">New list name: </label>
       <input
         id="listName"
         type="text"
@@ -90,7 +90,7 @@ function StudentListSelector() {
 
   const selectListTemplate = (
     <div>
-      <label for="listSelect">Current list: </label>
+      <label htmlFor="listSelect">Current list: </label>
       <select
         id="listSelect"
         disabled={studentLists.length < 1}

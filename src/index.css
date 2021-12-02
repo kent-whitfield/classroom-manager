@@ -24,6 +24,17 @@ code {
   color: #fff;
 }
 
+.detail-flex {
+  display: flex;
+  width: 100%;
+  border: 3px solid red;
+}
+
+.detail-flex-left {
+  width: 15%;
+  border: 3px solid blue;
+}
+
 /* TOGGLESWITCH STYLES */
 .toggle-switch {
   display: inline-flex;

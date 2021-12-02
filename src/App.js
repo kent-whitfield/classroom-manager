@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ThemeSwitch from "./components/ThemeSwitch";
 import Navbar from "./components/NavBar";
-import StudentListSelector from "./components/StudentListSelector";
+//import StudentListSelector from "./components/StudentListSelector";
 
 // Contexts
 import { ThemeContext } from "./ThemeContext";
@@ -28,7 +28,6 @@ function App() {
       <h1>Classroom Manager</h1>
       <Navbar />
       <StudentListsProvider>
-        <StudentListSelector />
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/schedule" element={<Schedule />} />
