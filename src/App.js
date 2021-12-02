@@ -10,6 +10,7 @@ import { StudentListsProvider } from "./StudentListsContext";
 // Routes
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./components/routes/Welcome";
+import Schedule from "./components/routes/Schedule";
 import Lesson from "./components/routes/Lesson";
 import StudentDetail from "./components/routes/StudentDetail";
 import EditLists from "./components/routes/EditLists";
@@ -30,6 +31,7 @@ function App() {
         <StudentListSelector />
         <Routes>
           <Route path="/" element={<Welcome />} />
+          <Route path="/schedule" element={<Schedule />} />
           <Route path="/lesson" element={<Lesson />} />
           <Route path="/detail" element={<StudentDetail />} />
           <Route path="/lists" element={<EditLists />} />

@@ -14,13 +14,13 @@ code {
 
 .todoapp-light {
   background: #fff;
-  background: linear-gradient(to right, #fff, #ccc, #fff);
+  background: linear-gradient(to right, #fff, #ccc);
   color: #000;
 }
 
 .todoapp-dark {
   background: #000;
-  background: linear-gradient(to right, #000, #333, #000);
+  background: linear-gradient(to right, #000, #333);
   color: #fff;
 }
 

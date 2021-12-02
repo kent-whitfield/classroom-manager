@@ -6,6 +6,8 @@ function Navbar() {
     <div>
       <Link to="/">Welcome</Link>
       {" | "}
+      <Link to="/schedule">Weekly Schedule</Link>
+      {" | "}
       <Link to="/lesson">Lesson Mode</Link>
       {" | "}
       <Link to="/detail">Student Details</Link>
