@@ -89,8 +89,16 @@ function EditLists() {
   return (
     <div>
       <form onSubmit={addStudent}>
-        <input type="text" onChange={handleNameChange} value={newName} />
-        <button>Add Student</button>
+        <label for="newName">Add new student: </label>
+        <input
+          id="newName"
+          type="text"
+          onChange={handleNameChange}
+          value={newName}
+        />
+        <button type="submit" disabled={newName.trim().length < 1}>
+          Add
+        </button>
       </form>
       <ul>{students}</ul>
     </div>

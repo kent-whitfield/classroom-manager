@@ -74,7 +74,13 @@ function StudentListSelector() {
 
   const addListTemplate = (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={listName} onChange={handleTextChange} />
+      <label for="listName">New list name: </label>
+      <input
+        id="listName"
+        type="text"
+        value={listName}
+        onChange={handleTextChange}
+      />
       <button type="submit">Save</button>
       <button type="button" onClick={() => setEditing(false)}>
         Cancel
@@ -84,6 +90,7 @@ function StudentListSelector() {
 
   const selectListTemplate = (
     <div>
+      <label for="listSelect">Current list: </label>
       <select
         id="listSelect"
         disabled={studentLists.length < 1}

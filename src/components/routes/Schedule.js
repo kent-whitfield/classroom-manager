@@ -1,28 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Schedule() {
   return (
     <div>
-      <h2>Welcome to the Schedule Page!</h2>
+      <h2>Weekly Schedule</h2>
       <p>
-        This was going to be the route where a teacher could enter their weekly
-        schedule, so that if they had multiple classes, they could track which
-        class list they would be using at different times of day. But I ran
-        short of time, and the route I planned didn't really demonstrate any
-        concepts that I haven't already covered elsewhere in the project, so it
-        got cut.
+        This is where a teacher would enter their weekly schedule, so that if
+        they had multiple classes, they could track which class list they would
+        be using at different times of day. But I ran short of time, and the
+        page I planned didn't really demonstrate any requirements that I haven't
+        already covered elsewhere in the project, so it got cut.
       </p>
       <p>
-        There's no way you could have navigated here by following the links, you
-        must have either typed the route in manually or you're looking through
-        my code.
+        This page would have table or grid layout of a one-week schedule. Each
+        day of week would contain an array of schedule block components with a
+        start time, end time, and the list of students they are teaching during
+        that time. The schedule blocks would render as an edit template when
+        first added or when editing is selected, and otherwise render a display
+        template.
       </p>
       <p>
-        If you're reading this, you're probably either the instructor or TA for
-        CPSC 2600. If so, please be sure to check out my{" "}
-        <Link to="/documentation">Documentation</Link> page, where I explain the
-        use of the app and, more importantly, why I deserve marks for it.
+        Future expansion would allow the teacher to select the subject they are
+        teaching and enter the lesson they have planned, in order to add detail
+        to the reporting on the student detail page.
+      </p>
+      <p>
+        In an ideal world, it would have the option of syncing with other
+        calendars such as the school's calendar of events, the teacher's
+        personal calendar, or a stat holiday calendar.
       </p>
     </div>
   );
