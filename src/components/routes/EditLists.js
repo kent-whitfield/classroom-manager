@@ -88,7 +88,7 @@ function EditLists() {
   return (
     <div>
       <h2>Edit Class Lists</h2>
-      <StudentListSelector />
+      <StudentListSelector showButtons={true} />
       <form onSubmit={addStudent}>
         <label htmlFor="newName">Add new student: </label>
         <input
@@ -105,7 +105,7 @@ function EditLists() {
           Add
         </button>
       </form>
-      <ul>{students}</ul>
+      <ul class="list-student-container">{students}</ul>
     </div>
   );
 }

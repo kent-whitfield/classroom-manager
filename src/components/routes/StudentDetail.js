@@ -1,11 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import { StudentListsContext } from "../../StudentListsContext";
+import { ThemeContext } from "../../ThemeContext";
 import StudentListSelector from "../StudentListSelector";
 import { nanoid } from "nanoid";
 import HistoryDay from "../HistoryDay";
 
 function StudentDetail() {
   const { studentLists, currentList } = useContext(StudentListsContext);
+  const [darkMode] = useContext(ThemeContext);
 
   const [filter, setFilter] = useState({
     text: "",
@@ -40,7 +42,11 @@ function StudentDetail() {
   const filteredList = studentList
     ? studentList.students.filter(filter.dataFilter).map((student) => {
         return (
-          <li key={nanoid()} onClick={() => setSelected(student)}>
+          <li
+            className="detail-student"
+            key={nanoid()}
+            onClick={() => setSelected(student)}
+          >
             {student.name}
           </li>
         );
@@ -74,7 +80,13 @@ function StudentDetail() {
       <h2>Student Details page</h2>
       <StudentListSelector />
       <div className="detail-flex">
-        <div className="detail-flex-left">
+        <div
+          className={
+            darkMode
+              ? "detail-flex-left detail-dark"
+              : "detail-flex-left detail-light"
+          }
+        >
           <div>
             <label htmlFor="filterList">Filter list: </label>
             <input
@@ -90,7 +102,15 @@ function StudentDetail() {
               : "no students matching selection"}
           </ul>
         </div>
-        <div>{detailPane()}</div>
+        <div
+          className={
+            darkMode
+              ? "detail-flex-right detail-dark"
+              : "detail-flex-right detail-light"
+          }
+        >
+          {detailPane()}
+        </div>
       </div>
       <p>
         This is where the teacher can select a single student from any class

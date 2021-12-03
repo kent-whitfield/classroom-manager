@@ -54,7 +54,7 @@ function Welcome() {
   return (
     <div>
       <h2>Welcome!</h2>
-      <div>{frameList}</div>
+      <div className="api-frame-list">{frameList}</div>
     </div>
   );
 }

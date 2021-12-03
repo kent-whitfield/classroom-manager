@@ -67,8 +67,10 @@ function ApiFrame(props) {
       return <div>Sorry, unable to load data from: {props.apiUrl}</div>;
     return (
       <div>
-        <div>{getValue("quote")}</div>
-        <div>{getValue("quoteAuthor")}</div>
+        <blockquote>
+          <div className="api-quote">{getValue("quote")}</div>
+          <div className="api-author">{getValue("quoteAuthor")}</div>
+        </blockquote>
       </div>
     );
   };
@@ -76,7 +78,7 @@ function ApiFrame(props) {
   const generic = () => {
     const elementList = props.apiDatamap.map((data) => {
       return (
-        <div key={nanoid()}>
+        <div className="api-generic" key={nanoid()}>
           {getValue("element" + props.apiDatamap.indexOf(data))}
         </div>
       );

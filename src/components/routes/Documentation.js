@@ -1,7 +1,7 @@
 import React from "react";
 
 function Documentation() {
-  return <div>Documentation Page</div>;
+  return <h2>Documentation Page</h2>;
 }
 
 export default Documentation;
