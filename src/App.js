@@ -21,23 +21,25 @@ function App() {
   const [darkMode] = useContext(ThemeContext);
 
   return (
-    <div className={darkMode ? "todoapp-dark" : "todoapp-light"}>
-      <div className="toggle-wrapper">
+    <div className={darkMode ? "theme-dark" : "theme-light"}>
+      <div className="theme-switch-wrapper">
         <ThemeSwitch />
       </div>
-      <h1>Classroom Manager</h1>
-      <Navbar />
-      <StudentListsProvider>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/lesson" element={<Lesson />} />
-          <Route path="/detail" element={<StudentDetail />} />
-          <Route path="/lists" element={<EditLists />} />
-          <Route path="/documentation" element={<Documentation />} />
-          <Route element={Error} />
-        </Routes>
-      </StudentListsProvider>
+      <div className="app-container">
+        <h1>Classroom Manager</h1>
+        <Navbar />
+        <StudentListsProvider>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/lesson" element={<Lesson />} />
+            <Route path="/detail" element={<StudentDetail />} />
+            <Route path="/lists" element={<EditLists />} />
+            <Route path="/documentation" element={<Documentation />} />
+            <Route element={Error} />
+          </Routes>
+        </StudentListsProvider>
+      </div>
     </div>
   );
 }

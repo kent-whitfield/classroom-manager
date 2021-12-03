@@ -65,9 +65,9 @@ function Lesson() {
 
   return (
     <div>
-      <h2>Lesson Mode page</h2>
+      <h2>Lesson Mode</h2>
       <StudentListSelector />
-      {lessonStudents}
+      <div className="lesson-student-container">{lessonStudents}</div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { StudentListsContext } from "../StudentListsContext";
 
-function StudentListSelector() {
+function StudentListSelector(props) {
   const { studentLists, setStudentLists, currentList, setCurrentList } =
     useContext(StudentListsContext);
 
@@ -98,14 +98,31 @@ function StudentListSelector() {
       >
         {optionList}
       </select>
-      <button disabled={disableDelete()} onClick={removeList}>
+      <button
+        className={
+          props.showButtons ? "select-buttons-show" : "select-buttons-hide"
+        }
+        disabled={disableDelete()}
+        onClick={removeList}
+      >
         Delete
       </button>
-      <button onClick={() => setEditing(true)}>Add new</button>
+      <button
+        className={
+          props.showButtons ? "select-buttons-show" : "select-buttons-hide"
+        }
+        onClick={() => setEditing(true)}
+      >
+        Add new
+      </button>
     </div>
   );
 
-  return isEditing ? addListTemplate : selectListTemplate;
+  return (
+    <div className="list-selector">
+      {isEditing ? addListTemplate : selectListTemplate}
+    </div>
+  );
 }
 
 export default StudentListSelector;

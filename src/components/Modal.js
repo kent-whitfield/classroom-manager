@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 import { nanoid } from "nanoid";
 
 function Modal(props) {
+  const [darkMode] = useContext(ThemeContext);
+
   if (!props.show) return null;
 
   const buttonContainer = props.resultTypes.map((type) => {
@@ -13,7 +16,7 @@ function Modal(props) {
   });
 
   return (
-    <div>
+    <div className={darkMode ? "modal modal-dark" : "modal modal-light"}>
       {buttonContainer}
       <button onClick={() => props.close("cancel")}>Cancel</button>
     </div>

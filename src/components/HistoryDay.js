@@ -9,13 +9,16 @@ function HistoryDay(props) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
+  // summarize interection types and results for a given category
   function summarize(category) {
     let summaryData = [];
 
     day.events
       .filter((event) => event.category === category)
       .forEach((event) => {
-        let summary = summaryData.find((s) => s.type === event.type);
+        let summary = summaryData.find(
+          (s) => s.type.toUpperCase() === event.type.toUpperCase()
+        );
         if (summary) {
           summary.count++;
         } else {
@@ -26,7 +29,9 @@ function HistoryDay(props) {
           };
           summaryData.push(summary);
         }
-        let result = summary.results.find((r) => r.type === event.result);
+        let result = summary.results.find(
+          (r) => r.type.toUpperCase() === event.result.toUpperCase()
+        );
         if (result) {
           result.count++;
         } else {
@@ -45,22 +50,22 @@ function HistoryDay(props) {
     const summaryData = summarize("interaction");
 
     return summaryData.map((summary) => {
+      // for each result type return a div containing format: result: count
       const results = summary.results.map((result) => {
         return (
-          <div key={nanoid()}>
-            {result.type}: {result.count}
+          <div className="result" key={nanoid()}>
+            {capitalize(result.type)}: {result.count}
           </div>
         );
       });
 
       return (
-        <div key={nanoid()}>
-          <h6>
+        <div className="summary-results" key={nanoid()}>
+          <div className="summary-type">
             {capitalize(summary.type)}: {summary.count}
-          </h6>
+          </div>
           <div>
-            Results:
-            <div>{results}</div>
+            <div className="results-container">{results}</div>
           </div>
         </div>
       );
@@ -68,8 +73,8 @@ function HistoryDay(props) {
   }
 
   return (
-    <div>
-      <h5>{day.date}</h5>
+    <div className="day-container">
+      <div className="day-date">{day.date}</div>
       {interactions()}
     </div>
   );

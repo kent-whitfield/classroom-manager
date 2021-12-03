@@ -17,12 +17,16 @@ function ToggleSwitch(props) {
         checked={darkMode}
         offColor="#87CEFA"
         checkedIcon={
-          <div style={{ paddingLeft: "10px", paddingTop: "2px" }}>
+          <div
+            style={{ paddingLeft: "4px", position: "relative", top: "-2px" }}
+          >
             {"\u263c"}
           </div>
         }
         uncheckedIcon={
-          <div style={{ paddingLeft: "10px", paddingTop: "2px" }}>
+          <div
+            style={{ paddingLeft: "7px", position: "relative", top: "-2px" }}
+          >
             {"\u263e"}
           </div>
         }

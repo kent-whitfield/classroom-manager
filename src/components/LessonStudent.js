@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 import Modal from "./Modal";
 
 function LessonStudent(props) {
+  const [darkMode] = useContext(ThemeContext);
+
   const [showModal, setShowModal] = useState(false);
   const [resultTypes, setResultTypes] = useState([]);
   const [eventType, setEventType] = useState({
@@ -23,7 +26,7 @@ function LessonStudent(props) {
 
   function questionClick(e) {
     setEventType({ category: "interaction", type: "question" });
-    setResultTypes(["insightful", "answered", "off-topic"]);
+    setResultTypes(["Insightful", "Answered", "Off-topic"]);
     setShowModal(true);
   }
 
@@ -35,8 +38,14 @@ function LessonStudent(props) {
   }
 
   return (
-    <div>
-      <div>{props.name}</div>
+    <div
+      className={
+        darkMode
+          ? "lesson-student lesson-student-dark"
+          : "lesson-student lesson-student-light"
+      }
+    >
+      <div className="lesson-student-name">{props.name}</div>
       <div>
         <button type="button" onClick={handUpClick}>
           Hand Up
