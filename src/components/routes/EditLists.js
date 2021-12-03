@@ -106,6 +106,7 @@ function EditLists() {
         </button>
       </form>
       <ul class="list-student-container">{students}</ul>
+      <div className="page-bottom"></div>
     </div>
   );
 }

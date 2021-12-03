@@ -46,6 +46,10 @@ h1 {
   text-align: center;
 }
 
+dd {
+  margin-bottom: 1rem;
+}
+
 .app-container {
   max-width: 85%;
   margin: auto;
@@ -114,19 +118,23 @@ h1 {
   content: close-quote;
 }
 
-/* SCHEDULE PAGE */
+/* DOCUMENTATION STYLES */
 
-.sched-container {
+.doc-container {
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.sched-container-dark {
+.doc-container-dark {
   border: 1px solid white;
 }
-.sched-container-light {
+.doc-container-light {
   border: 1px solid black;
+}
+
+.page-bottom {
+  padding-bottom: 30px;
 }
 
 /* LESSON PAGE */

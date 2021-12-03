@@ -10,8 +10,8 @@ function Schedule() {
       <div
         className={
           darkMode
-            ? "sched-container sched-container-dark"
-            : "sched-container sched-container-light"
+            ? "doc-container doc-container-dark"
+            : "doc-container doc-container-light"
         }
       >
         <p>
@@ -40,6 +40,7 @@ function Schedule() {
           personal calendar, or a stat holiday calendar.
         </p>
       </div>
+      <div className="page-bottom"></div>
     </div>
   );
 }
