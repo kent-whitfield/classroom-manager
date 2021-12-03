@@ -112,39 +112,49 @@ function StudentDetail() {
           {detailPane()}
         </div>
       </div>
-      <p>
-        This is where the teacher can select a single student from any class
-        list to view details about that student. It displays a history of
-        interactions with the student, such as when the student has volunteered
-        by raising their hand in class, and when they have been called on, when
-        they have asked question, etc. This information may be used for review,
-        or at the end of the term when writing report cards.
-      </p>
-      <p>
-        The data on this page could be made more meaningful by including the
-        subject and the current list when tracking participation on the lesson
-        page. This would allow for more detailed analysis of the data, such as:
-      </p>
-      <ul>
-        <li>
-          &lt;name&gt; participates often in math class, but less in language
-          arts.
-        </li>
-        <li>
-          &lt;name&gt; does not volunteer often, but usually knows the answer
-          when called on.
-        </li>
-        <li>
-          &lt;name&gt; took particular interest in &lt;lesson&gt; and asked
-          insightful questions.
-        </li>
-      </ul>
-      <p>
-        This concept could be expanded to track disruptions in class in order to
-        develop a timeline and look for patterns in the behavior. It could also
-        track conflicts between students, which the teacher could use to
-        minimize future escalations.
-      </p>
+      <div
+        className={
+          darkMode
+            ? "doc-container doc-container-dark"
+            : "doc-container doc-container-light"
+        }
+      >
+        <p>
+          This is where the teacher can select a single student from any class
+          list to view details about that student. It displays a history of
+          interactions with the student, such as when the student has
+          volunteered by raising their hand in class, and when they have been
+          called on, when they have asked question, etc. This information may be
+          used for review, or at the end of the term when writing report cards.
+        </p>
+        <p>
+          The data on this page could be made more meaningful by including the
+          subject and the current list when tracking participation on the lesson
+          page. This would allow for more detailed analysis of the data, such
+          as:
+        </p>
+        <ul>
+          <li>
+            &lt;name&gt; participates often in math class, but less in language
+            arts.
+          </li>
+          <li>
+            &lt;name&gt; does not volunteer often, but usually knows the answer
+            when called on.
+          </li>
+          <li>
+            &lt;name&gt; took particular interest in &lt;lesson&gt; and asked
+            insightful questions.
+          </li>
+        </ul>
+        <p>
+          This concept could be expanded to track disruptions in class in order
+          to develop a timeline and look for patterns in the behavior. It could
+          also track conflicts between students, which the teacher could use to
+          minimize future escalations.
+        </p>
+      </div>
+      <div className="page-bottom"></div>
     </div>
   );
 }
